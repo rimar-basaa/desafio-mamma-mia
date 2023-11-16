@@ -25,6 +25,7 @@ const Carrito = () => {
 
 
     return (
+        <>
         <div className="pedido">
             <h1 className="pedido-title">Tu pedido</h1>
             <table>
@@ -34,7 +35,7 @@ const Carrito = () => {
                             <tr key={item.id}>
                                 <td>{item.id}</td>
                                 <td>{item.name.substring(0, 1).toUpperCase() + item.name.substring(1).toLowerCase()}</td>
-                                <td className="drive-precio">$ {(item.price * item.cantidad).toLocaleString('es-CL')}</td>
+                                <td className="drive-precio">${(item.price * item.cantidad).toLocaleString('es-CL')}</td>
                                 <td className="drive">
                                     <button className="drive-btn"
                                             onClick={() => decrementar(item.id)}> - </button>
@@ -50,6 +51,7 @@ const Carrito = () => {
             <h3>Total $ {total}</h3>
             <button className='btn add'>Ir a pagar</button>
         </div>
+        </>
     );    
 };
 
